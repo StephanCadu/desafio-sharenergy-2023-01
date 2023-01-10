@@ -23,7 +23,9 @@ code {
 }
 
 .loginForm {
-  @apply flex flex-col items-center justify-around w-screen max-w-xl min-w-fit h-5/6 rounded-xl border-2 border-black mx-2;
+  @apply flex flex-col items-center justify-around w-screen max-w-xl min-w-fit
+    h-5/6 rounded-xl border-2 border-black mx-2;
+  min-height: 450px;
 }
 
 .loginTitle {
@@ -40,4 +42,8 @@ code {
 
 .loginButton {
   @apply text-center h-16 w-3/4 rounded-xl border-2 border-black bg-black text-white text-2xl;
+}
+
+.loginRemember {
+  @apply flex w-max items-center justify-between gap-2 h-6
 }

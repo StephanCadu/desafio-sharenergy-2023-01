@@ -7,6 +7,7 @@ interface LoginProps {}
 const Login: FunctionComponent<LoginProps> = () => {
   const [user, setUser] = useState<IUser>({ username: '', password: '' });
   const navigate = useNavigate();
+  const [remember, setRemember] = useState<boolean>(false);
   
   const handleChange = ({ target: { name, value } }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     setUser((prev) => ({ ...prev, [name]: value }));
@@ -17,7 +18,7 @@ const Login: FunctionComponent<LoginProps> = () => {
   const login = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (loginAuthorized(user)) {
-      localStorage.setItem('login', JSON.stringify(user));
+      remember && localStorage.setItem('login', JSON.stringify(user));
       navigate('/');
     }
   }
@@ -59,11 +60,20 @@ const Login: FunctionComponent<LoginProps> = () => {
           placeholder="*******"
         />
       </label>
+      
       <button
         className="loginButton"
       >
         LOGIN
       </button>
+    
+      <label htmlFor="remember" className="loginRemember">
+        <input
+          type="checkbox"
+          onChange={ () => setRemember((prev) => !prev) }
+        />
+        remember me
+      </label>
     </form>
   );
 }
