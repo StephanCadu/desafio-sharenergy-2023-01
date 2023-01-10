@@ -7,6 +7,8 @@ interface UsersProps {}
 const Users: FunctionComponent<UsersProps> = () => {
   const [page, setPage] = useState<number>(1);
   const [users, setUsers] = useState<IUser[]>([]);
+  const [filter, setFilter] = useState<string>('');
+  const [search, setSearch] = useState<boolean>(false);
 
   const fetch = async (): Promise<void> => {
     const result = await fetchUsers(page);
@@ -15,19 +17,40 @@ const Users: FunctionComponent<UsersProps> = () => {
 
   useEffect(() => { fetch() }, [page])
 
+  useEffect(() => { if(filter === '') setSearch(false) }, [filter])
+
   return (
     <div className="usersContainer">
 
-      <form onSubmit={ (e) => { e.preventDefault() } }>
-        <input type="text" />
+      <form
+        onSubmit={ (e) => {
+          e.preventDefault();
+          setSearch(true);
+        } }
+        className="usersFilter"
+      >
+        <h1 className=" text-xl">Filter by name, user or email:</h1>
 
-        <button>search</button>
+        <div className=" w-full h-auto flex items-center justify-center">
+          <input
+            type="text"
+            value={ filter }
+            onChange={ (e) => setFilter(e.target.value) }
+            className="usersFilterInput"
+            placeholder="Ex: Clarke"
+          />
+
+          <button className="usersFilterButton">search</button>
+        </div>
       </form>
 
       <section className="usersList">
         {
           !users.length ? 'no users yet...' : (
-            users.map(({ picture: { large }, name: { first, last }, email, login: { username }, dob: { age } }) => (
+            users
+              .filter(({ name: { first, last }, email, login: { username } }) => !search || !filter
+                || `${first} ${last} ${email} ${username}`.includes(filter))
+              .map(({ picture: { large }, name: { first, last }, email, login: { username }, dob: { age } }) => (
               <div className="userCard" key={ email }>
                 <img
                   src={ large }
