@@ -22,6 +22,7 @@ code {
   @apply h-screen w-screen flex items-center justify-center;
 }
 
+/* LOGIN */
 .loginForm {
   @apply flex flex-col items-center justify-around w-screen max-w-xl min-w-fit
     h-5/6 rounded-xl border-2 border-black mx-2;
@@ -47,3 +48,32 @@ code {
 .loginRemember {
   @apply flex w-max items-center justify-between gap-2 h-6
 }
+/* LOGIN */
+
+/* USERS */
+.usersContainer {
+  @apply h-full w-full flex flex-col items-center justify-around
+}
+
+.usersList {
+  @apply flex flex-wrap h-2/3 w-4/5 mx-5 items-center justify-center gap-14;
+  max-height: 450px;
+  max-width: 1000px;
+  overflow-y: scroll;
+}
+
+.userCard {
+  @apply flex items-center justify-between h-52 rounded-2xl
+    border-2 border-l-0 border-black shadow-md shadow-slate-700 bg-black;
+  width: 450px;
+  min-width: 450px;
+}
+
+.userInfo {
+  @apply flex flex-col justify-around items-center h-full w-3/5 bg-white rounded-r-2xl
+}
+
+.userImg {
+  @apply h-52 w-52 rounded-l-2xl;
+}
+/* USERS */

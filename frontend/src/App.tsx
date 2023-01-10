@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Provider from './context/Provider';
+// import Provider from './context/Provider';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import Users from './pages/Users';
@@ -10,7 +10,7 @@ import Users from './pages/Users';
 
 function App() {
   return (
-    <Provider>
+    // <Provider>
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={ <Login /> } />
@@ -20,7 +20,7 @@ function App() {
           {/* <Route path="/" element={ <Clients /> } /> */}
         </Routes>
       </BrowserRouter>
-    </Provider>
+    // </Provider>
   );
 }
 

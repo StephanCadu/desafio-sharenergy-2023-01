@@ -1,11 +1,11 @@
 import React, { FunctionComponent, ChangeEvent, useState, FormEvent, useEffect } from "react";
 import { useNavigate } from "react-router";
-import { IUser } from "../interfaces";
+import { ILogin } from "../interfaces";
 
 interface LoginProps {}
  
 const Login: FunctionComponent<LoginProps> = () => {
-  const [user, setUser] = useState<IUser>({ username: '', password: '' });
+  const [user, setUser] = useState<ILogin>({ username: '', password: '' });
   const navigate = useNavigate();
   const [remember, setRemember] = useState<boolean>(false);
   
@@ -13,7 +13,7 @@ const Login: FunctionComponent<LoginProps> = () => {
     setUser((prev) => ({ ...prev, [name]: value }));
   }
 
-  const loginAuthorized = (usr: IUser) => usr.username === 'desafiosharenergy' && usr.password === 'sh@r3n3rgy';
+  const loginAuthorized = (usr: ILogin) => usr.username === 'desafiosharenergy' && usr.password === 'sh@r3n3rgy';
 
   const login = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
@@ -24,7 +24,7 @@ const Login: FunctionComponent<LoginProps> = () => {
   }
 
   useEffect(() => {
-    const savedUser: IUser = JSON.parse(localStorage.getItem('login') || '{}');
+    const savedUser: ILogin = JSON.parse(localStorage.getItem('login') || '{}');
     if (loginAuthorized(savedUser)) {
       localStorage.setItem('login', JSON.stringify(user));
       navigate('/');
