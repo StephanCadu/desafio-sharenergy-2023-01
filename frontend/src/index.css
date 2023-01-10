@@ -120,7 +120,7 @@ code {
 }
 
 .catImg {
-  @apply border-2 border-black h-3/5 w-auto;
+  @apply border-2 border-black h-3/5 w-auto mb-11;
   min-width: 300px;
 }
 /* CATS */
@@ -136,6 +136,11 @@ code {
 .dogImg {
   @apply h-5/6 w-auto rounded-t-md;
   border: 2px solid #D6DF27;
+}
+
+.dogsInput {
+  @apply rounded-lg border-2 border-black pl-2 w-3/5;
+  min-width: 200px;
 }
 /* DOGS */
 
