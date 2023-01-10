@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import { fetchUsers } from "../helpers/fetch";
 import { IUser } from "../interfaces";
+import Nav from "../components/Nav";
 
 interface UsersProps {}
  
@@ -21,6 +22,8 @@ const Users: FunctionComponent<UsersProps> = () => {
 
   return (
     <div className="usersContainer">
+
+      <Nav />
 
       <form
         onSubmit={ (e) => {
@@ -82,6 +85,7 @@ const Users: FunctionComponent<UsersProps> = () => {
               <span
                 className={ `flex items-center justify-center h-7 w-7 ${index + 1 === page ? 'bg-blue-600 rounded-full text-white' : ''}` }
                 onClick={ () => setPage(index + 1) }
+                key={ index }
               >
                 { index + 1 }
               </span>

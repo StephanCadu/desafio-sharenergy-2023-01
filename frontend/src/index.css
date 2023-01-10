@@ -50,9 +50,16 @@ code {
 }
 /* LOGIN */
 
+/* NAV */
+.activeLink {
+  @apply scale-110 font-bold;
+  color: #1CA2A1;
+}
+/* NAV */
+
 /* USERS */
 .usersContainer {
-  @apply h-full w-full flex flex-col items-center justify-around
+  @apply h-full w-full flex flex-col items-center justify-between
 }
 
 .usersList {
