@@ -76,4 +76,8 @@ code {
 .userImg {
   @apply h-52 w-52 rounded-l-2xl;
 }
+
+.usersController {
+  @apply flex w-52 items-center justify-around
+}
 /* USERS */

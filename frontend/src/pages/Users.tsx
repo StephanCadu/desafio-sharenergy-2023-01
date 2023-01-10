@@ -51,15 +51,22 @@ const Users: FunctionComponent<UsersProps> = () => {
       </section>
 
       <footer className="usersController">
-        <button onClick={ () => setPage((prev) => prev === 1 ? 10 : prev - 1) }>-</button>
+        <button onClick={ () => setPage((prev) => prev === 1 ? 10 : prev - 1) } className=" text-2xl font-bold mr-3">-</button>
 
-        <div>
+        <div className="flex items-center justify-center gap-1">
           {
-            users.map((_, index) => <span className={ `${index + 1 === page ? 'bg-blue-600 rounded-full text-white' : ''}` }>{ index + 1 }</span>)
+            users.map((_, index) => (
+              <span
+                className={ `flex items-center justify-center h-7 w-7 ${index + 1 === page ? 'bg-blue-600 rounded-full text-white' : ''}` }
+                onClick={ () => setPage(index + 1) }
+              >
+                { index + 1 }
+              </span>
+            ))
           }
         </div>
 
-        <button onClick={ () => setPage((prev) => prev === 10 ? 1 : prev + 1) }>+</button>
+        <button onClick={ () => setPage((prev) => prev === 10 ? 1 : prev + 1) } className=" text-2xl font-bold ml-3">+</button>
       </footer>
 
     </div>
