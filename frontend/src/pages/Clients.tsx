@@ -5,7 +5,7 @@ interface ClientsProps {}
  
 const Clients: FunctionComponent<ClientsProps> = () => {
   return (
-    <div>
+    <div className="mainContainer">
       <Nav />
     </div>
   );

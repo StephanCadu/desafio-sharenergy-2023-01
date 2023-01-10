@@ -8,10 +8,10 @@ const Nav: FunctionComponent<NavProps> = () => {
   const { pathname } = useLocation();
 
   return (
-    <div className=" h-16 w-full flex items-center justify-between">
-      <img src={ sharenergylogo } alt="Sharenergy" className=" h-14" />
+    <div className="nav">
+      <img src={ sharenergylogo } alt="Sharenergy" className="navlogo" />
 
-      <nav className=" flex h-full w-1/3 items-center justify-around">
+      <nav className="navLinks">
         <Link to="/" className={ pathname === '/' ? 'activeLink' : '' }>Users</Link>
         <Link to="/cats" className={ pathname.includes('/cats') ? 'activeLink' : '' }>Cats</Link>
         <Link to="/dogs" className={ pathname.includes('/dogs') ? 'activeLink' : '' }>Dogs</Link>

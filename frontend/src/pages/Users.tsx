@@ -16,13 +16,10 @@ const Users: FunctionComponent<UsersProps> = () => {
     setUsers(result)
   };
 
-  useEffect(() => { fetch() }, [page])
-
-  useEffect(() => { if(filter === '') setSearch(false) }, [filter])
+  useEffect(() => { fetch() }, [page]);
 
   return (
-    <div className="usersContainer">
-
+    <div className="mainContainer">
       <Nav />
 
       <form
@@ -32,7 +29,7 @@ const Users: FunctionComponent<UsersProps> = () => {
         } }
         className="usersFilter"
       >
-        <h1 className=" text-xl">Filter by name, user or email:</h1>
+        <h1 className=" text-xl min-w-max">Filter by name, user or email:</h1>
 
         <div className=" w-full h-auto flex items-center justify-center">
           <input
