@@ -10,3 +10,11 @@ export interface IUser {
   login: { username: string }
   dob: { date: Date, age: number }
 }
+
+export interface IClient {
+  name: string
+  phone: string
+  email: string
+  cpf: string
+  address: string
+}

@@ -144,6 +144,44 @@ code {
 }
 /* DOGS */
 
+/* CLIENTS */
+.clientsContainer {
+  @apply h-1/2 w-full mx-8 mb-12 flex items-center justify-start;
+  max-width: 650px;
+  overflow-x: scroll;
+}
+
+.clientCard {
+  @apply w-64 h-64 flex flex-col items-center justify-around rounded-3xl m-3;
+  min-width: 256px;
+  max-width: 256px;
+  border: 1px solid black;
+}
+
+.clientForm {
+  @apply flex flex-wrap h-1/5 w-full rounded-lg items-center justify-center;
+  border: 1px solid black;
+  max-width: 650px;
+}
+
+.clientInput {
+  @apply h-8 w-48 rounded-lg m-1 text-center;
+  border: 1px solid black;
+}
+
+.clientButton {
+  @apply h-8 w-48 rounded-lg m-1 text-center text-white font-bold;
+}
+
+.save {
+  @apply border-2 border-green-600 bg-green-600 rounded-lg;
+}
+
+.edit {
+  @apply border-2 border-blue-600 bg-blue-600 rounded-lg;
+}
+/* CLIENTS */
+
 @media only screen and (max-width: 550px) {
   .navlogo {
     display: none;

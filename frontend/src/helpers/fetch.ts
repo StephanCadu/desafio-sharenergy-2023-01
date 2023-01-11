@@ -9,8 +9,6 @@ export const fetchUsers = async (pages: number): Promise<IUser[]> => {
 }
 
 export const fetchDog = async (): Promise<string> => {
-  const dog = await fetch(dogsURL).then((data) => data.json());
-  console.log(dog);
-  
+  const dog = await fetch(dogsURL).then((data) => data.json());  
   return dog.url;
 }
